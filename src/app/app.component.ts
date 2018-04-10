@@ -73,7 +73,29 @@ export class AppComponent {
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [];
+  events: CalendarEvent[] = [
+    {
+      id: 1,
+      start: subDays(startOfDay(new Date()), 1),
+      end: addDays(new Date(), 1),
+      title: "Planning 1",
+      color: colors.red
+    },
+    {
+      id: 2,
+      start: startOfDay(new Date()),
+      end: startOfDay(new Date()),
+      title: "Planning 2",
+      color: colors.yellow
+    },
+    {
+      id: 3,
+      start: subDays(endOfMonth(new Date()), 3),
+      end: addDays(endOfMonth(new Date()), 3),
+      title: "Planning 3",
+      color: colors.blue
+    }
+  ];
 
   /*events: CalendarEvent[] = [
     {
